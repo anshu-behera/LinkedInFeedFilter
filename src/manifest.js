@@ -3,11 +3,13 @@ const manifest = {
   name: "LinkedIn Feed Filter",
   description: "Filters LinkedIn feed posts with semantic embeddings using all-MiniLM-L6-v2.",
   version: "1.0.0",
+  action: {
+    default_popup: "src/popup.html",
+    default_title: "LinkedIn Feed Filter"
+  },
   permissions: ["storage"],
   host_permissions: [
-    "https://www.linkedin.com/*",
-    "https://huggingface.co/*",
-    "https://cdn-lfs.huggingface.co/*"
+    "https://www.linkedin.com/*"
   ],
   content_security_policy: {
     extension_pages: "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
@@ -24,11 +26,11 @@ const manifest = {
     }
   ],
   icons: {
-    "128": "hello_extensions.png"
+    "128": "icon.png"
   },
   web_accessible_resources: [
     {
-      resources: ["hello_extensions.png"],
+      resources: ["icon.png"],
       matches: ["https://www.linkedin.com/*"]
     }
   ]

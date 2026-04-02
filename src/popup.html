@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>LinkedIn Feed Filter</title>
+  <style>
+    body { font-family: sans-serif; width: 300px; padding: 12px; margin: 0; }
+    h2 { font-size: 14px; margin: 0 0 10px; }
+    #topic-list { list-style: none; padding: 0; margin: 0 0 10px; max-height: 220px; overflow-y: auto; }
+    #topic-list li { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; border-bottom: 1px solid #eee; font-size: 12px; gap: 6px; }
+    #topic-list li span:first-child { flex: 1; word-break: break-word; }
+    .example-count { font-size: 10px; color: #999; white-space: nowrap; }
+    .remove { background: none; border: none; color: #c00; cursor: pointer; font-size: 16px; line-height: 1; padding: 0 2px; }
+    .remove:disabled { opacity: 0.4; cursor: default; }
+    .empty { color: #999; font-size: 12px; font-style: italic; padding: 4px 0; }
+    #add-row { display: flex; gap: 6px; }
+    #new-topic { flex: 1; font-size: 12px; padding: 4px 6px; border: 1px solid #ccc; border-radius: 4px; }
+    #add-btn { font-size: 12px; padding: 4px 10px; cursor: pointer; }
+    #add-btn:disabled { opacity: 0.5; cursor: default; }
+    #status { font-size: 11px; color: #666; margin-top: 6px; min-height: 14px; }
+  </style>
+</head>
+<body>
+  <h2>Blocked Topics</h2>
+  <ul id="topic-list"></ul>
+  <div id="add-row">
+    <input id="new-topic" type="text" placeholder="e.g. cryptocurrency" />
+    <button id="add-btn">Add</button>
+  </div>
+  <div id="status"></div>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
